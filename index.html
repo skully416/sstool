@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>sstool - Screenshot Tool</title>
+  <style>/* Add more styles here as needed */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
+
+header h1 {
+  margin: 0;
+}
+
+main {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+h2 {
+  border-bottom: 2px solid #333;
+  padding-bottom: 5px;
+  color: #007bff;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.download-btn {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.download-btn:hover {
+  background-color: #0056b3;
+}
+
+#startup ol {
+  padding-left: 20px;
+}
+
+.gif-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.gif-container img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+footer {
+  background-color: #333;
+  text-align: center;
+  color: #fff;
+  padding: 10px;
+}
+
+footer p {
+  margin: 0;
+}
+
+* {
+  text-align: center;
+}
+
+h1 {
+  background-color: #333;
+  padding: 10px 20px;
+  color: #fff; /* Set the text color to white for better contrast */
+}
+
+/* Center the text within the <h1> element */
+h1 {
+  text-align: center;
+}
+
+/* Increase the font size to make the heading more prominent */
+h1 {
+  font-size: 36px;
+}
+
+/* Add some border-radius to give the heading rounded corners */
+h1 {
+  border-radius: 10px;
+}
+
+h3 {
+  background-color: #333;
+  padding: 10px 20px;
+  color: #fff; /* Set the text color to white for better contrast */
+}
+
+/* Center the text within the <h1> element */
+h3 {
+  text-align: center;
+}
+
+/* Increase the font size to make the heading more prominent */
+h3 {
+  font-size: 20px;
+}
+
+/* Add some border-radius to give the heading rounded corners */
+h3 {
+  border-radius: 10px;
+    }</style>
+</head>
+
+<body>
+
+  <main>
+    <div class="men">
+      <h1>sstool</h1></div>
+    </section>
+    <section id="features">
+      <h2>Features</h2>
+      <ul>
+        <li>Easy-to-use screenshot tool</li>
+        <li>Allows you to select an area on your screen for capturing</li>
+        <li>Customizable file name, file type, and save directory</li>
+        <li>Captures screenshots in GIF, PNG, JPEG, or JPG formats</li>
+        <li>Automatically restarts for taking multiple screenshots</li>
+      </ul>
+    </section>
+    <section id="startup">
+      <h2>Make sstool a Startup App</h2>
+      <p>Follow the steps below to make sstool a startup app on your PC:</p>
+      <ol>
+        <li>Step 1: Make a shortcut for the .exe file</li>
+        <li>Step 2: Press Windows + R on your keyboard to open up the run menu</li>
+        <li>Step 3: Type in "shell:startup" and press enter on your keyboard</li>
+        <li>Step 4: Drag the shortcut that you made into the folder that opened when you hit enter</li>
+      </ol>
+  <p>Alternatively, you can follow along with the GIF below to make sstool a startup app:</p>
+  <button class="button" id="show-gif-btn">Click me to show gif</button>
+  <div id="gif-container" class="gif-container" style="display: none;">
+    <!-- Add the "pause" attribute to prevent the GIF from playing automatically -->
+    <img id="gif-image" src="https://github.com/skully416/sstool/blob/main/tutorial.gif?raw=true" alt="Startup GIF" pause>
+  </div>
+
+  <script>
+    // Function to restart the GIF
+    function restartGif() {
+      const gifImage = document.getElementById('gif-image');
+      // Reset the src attribute to restart the GIF
+      gifImage.setAttribute('src', gifImage.getAttribute('src'));
+      // Pause the GIF
+      gifImage.setAttribute('pause', '');
+    }
+
+    // Add a click event listener to the button
+    document.getElementById('show-gif-btn').addEventListener('click', () => {
+      const gifContainer = document.getElementById('gif-container');
+      const showGifButton = document.getElementById('show-gif-btn');
+
+      // Check if the GIF container is currently hidden
+      if (gifContainer.style.display === 'none') {
+        // If it's hidden, show the GIF and update the button text
+        gifContainer.style.display = 'block';
+        showGifButton.textContent = 'Click me to hide gif';
+        // Start playing the GIF
+        document.getElementById('gif-image').removeAttribute('pause');
+      } else {
+        // If it's visible, hide the GIF and update the button text
+        gifContainer.style.display = 'none';
+        showGifButton.textContent = 'Click me to show gif';
+        // Reset the GIF when hiding
+        restartGif();
+      }
+    });
+
+    // Automatically restart the GIF when the DOM content is loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      restartGif();
+    });
+
+    // Automatically restart the GIF when the page is refreshed
+    window.addEventListener('load', () => {
+      restartGif();
+    });
+  </script>
+    </section>
+    <section id="download">
+      <h2>Download</h2>
+      <p>Click the button below to download the sstool executable:</p>
+      <a href="https://github.com/skully416/sstool/releases/download/v1/sstool.exe" download class="download-btn">Download sstool</a>
+    </section><div class="men">
+      <h3>&copy; 2023 sstool. All rights reserved.</h3></div>
+  </main>
+
+  <script src="scripts.js"></script>
+</body>
+
+</html>
