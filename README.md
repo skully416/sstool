@@ -1,5 +1,5 @@
 # sstool
-not making this open source yet because it actually took me time to make, but i might soon. you can download it at this page: https://github.com/immayr/sstool/releases/tag/v1 (sstool.exe)
+not making this open source yet because it actually took me time to make, but i might soon. you can download it at this page: https://github.com/skully416/sstool/releases/tag/v1 (sstool.exe)
 # startup
 <h3>use the steps below to learn how to make sstool a startup app on your pc<br><hr></h3>
 Step 1: Make a shortcut for the .exe file<br>
